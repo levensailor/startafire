@@ -2,7 +2,7 @@ import Script from "next/script";
 import { AlbumCoverFlip } from "./album-cover-flip";
 
 const COVER_PATH = "/start%20a%20fire%20cover.png";
-const BACK_FLIP_IMAGE_PATH = "/IMG_5541.png";
+const BACK_FLIP_IMAGE_PATH = "/croatoa-bill-notext.jpg";
 
 export default function HomePage() {
   return (
