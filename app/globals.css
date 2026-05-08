@@ -369,7 +369,7 @@ html.hf-show-back-cover-photo .label-gate-error {
 }
 
 .player-play:hover {
-  background: #ea3e83;
+  background: #a90414;
   transform: scale(1.04);
 }
 
@@ -528,7 +528,7 @@ html.hf-show-back-cover-photo .label-gate-error {
 }
 
 .track-row--active {
-  border-color: var(--spotify-green);
+  border-color: #ea3e83;
   background: #f7071f1c;
 }
 
