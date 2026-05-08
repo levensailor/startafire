@@ -360,7 +360,7 @@ html.hf-show-back-cover-photo .label-gate-error {
   height: 48px;
   border-radius: 999px;
   border: none;
-  background: var(--spotify-green);
+  background: #f7071f;
   color: #fff;
   cursor: pointer;
   display: grid;
@@ -369,7 +369,7 @@ html.hf-show-back-cover-photo .label-gate-error {
 }
 
 .player-play:hover {
-  background: var(--spotify-green-hover);
+  background: #ea3e83;
   transform: scale(1.04);
 }
 
@@ -447,7 +447,7 @@ html.hf-show-back-cover-photo .label-gate-error {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(29, 185, 84, 0.95);
+  color: rgba(146, 36, 36, 0.95);
 }
 
 .label-gate-error {
@@ -477,7 +477,7 @@ html.hf-show-back-cover-photo .label-gate-error {
   width: 0%;
   height: 100%;
   border-radius: 99px;
-  background: var(--spotify-green);
+  background: #ea3e83;
   pointer-events: none;
 }
 
@@ -509,12 +509,12 @@ html.hf-show-back-cover-photo .label-gate-error {
 
 .track-row--playable {
   cursor: pointer;
-  border-color: rgba(29, 185, 84, 0.45);
-  background: rgba(29, 185, 84, 0.12);
+  border-color: #ea3e83;
+  background: #f7071f1c;
 }
 
 .track-row--playable:hover:not(:disabled) {
-  background: rgba(29, 185, 84, 0.2);
+  background: #f7071f1c;
 }
 
 .track-row:disabled {
@@ -529,7 +529,7 @@ html.hf-show-back-cover-photo .label-gate-error {
 
 .track-row--active {
   border-color: var(--spotify-green);
-  background: rgba(29, 185, 84, 0.22);
+  background: #f7071f1c;
 }
 
 .track-name {
@@ -548,7 +548,7 @@ html.hf-show-back-cover-photo .label-gate-error {
 }
 
 .track-row-badge--action {
-  color: var(--spotify-green);
+  color: #ea3e83;
   text-transform: none;
   letter-spacing: 0.02em;
   font-weight: 700;
@@ -556,7 +556,7 @@ html.hf-show-back-cover-photo .label-gate-error {
 
 .track-hint {
   font-size: 0.72rem;
-  color: var(--spotify-green);
+  color: #ea3e83;
   flex-shrink: 0;
   font-weight: 700;
 }
