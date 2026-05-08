@@ -453,7 +453,7 @@ html.hf-show-back-cover-photo .label-gate-error {
 .label-gate-error {
   margin: 0.1rem 0 0.3rem;
   font-size: 0.68rem;
-  color: #ff8a8a;
+  color: #f7071f;
 }
 
 .time-label {
@@ -477,7 +477,7 @@ html.hf-show-back-cover-photo .label-gate-error {
   width: 0%;
   height: 100%;
   border-radius: 99px;
-  background: #ea3e83;
+  background: #f7071f;
   pointer-events: none;
 }
 
@@ -509,7 +509,7 @@ html.hf-show-back-cover-photo .label-gate-error {
 
 .track-row--playable {
   cursor: pointer;
-  border-color: #ea3e83;
+  border-color: #f7071f;
   background: #f7071f1c;
 }
 
@@ -548,7 +548,7 @@ html.hf-show-back-cover-photo .label-gate-error {
 }
 
 .track-row-badge--action {
-  color: #ea3e83;
+  color: #f7071f;
   text-transform: none;
   letter-spacing: 0.02em;
   font-weight: 700;
