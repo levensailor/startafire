@@ -1,0 +1,516 @@
+/* Mirrors DistroKid HyperFollow layout tokens from:
+   - https://distrokid.com/hyperfollow/croatoa/start-a-fire-2?ref=release (inline .hfGrayMatte, .artCover, etc.)
+   - https://distrokid.com/css/main.css (.pageBg, .pageBgImage) */
+
+:root {
+  color-scheme: dark;
+  /* Vertical compactness of the grey HyperFollow card (~66% of prior padding/margins) */
+  --hf-matte-v-scale: 0.66;
+  --hf-matte: #333333;
+  --hf-body-bg: #000000;
+  --hf-text: #ffffff;
+  --hf-muted: rgba(255, 255, 255, 0.8);
+  --hf-glass: rgb(255 255 255 / 17%);
+  --hf-glass-hover: rgb(255 255 255 / 35%);
+  --hf-line: rgba(0, 0, 0, 0.07);
+  --spotify-green: #1db954;
+  --spotify-green-hover: #1ed760;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  background: var(--hf-body-bg) !important;
+  color: var(--hf-text) !important;
+  padding-bottom: 100px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* .pageBg + .pageBgImage from DistroKid main.css */
+.page-bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: var(--hf-body-bg);
+  z-index: -100;
+  overflow: hidden;
+}
+
+.page-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 55%;
+  min-height: 55%;
+  filter: blur(35px);
+  -webkit-filter: blur(35px);
+  opacity: 0.3;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.hf-layout {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+}
+
+/* Outer flex wrapper: margin ~11% 20px from HyperFollow HTML */
+.hf-shell {
+  margin: 11vh 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5rem;
+}
+
+/* .hfGrayMatte */
+.hf-gray-matte {
+  position: relative;
+  background: var(--hf-matte);
+  width: 100%;
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(40px * var(--hf-matte-v-scale)) 20px calc(30px * var(--hf-matte-v-scale));
+  margin: 0 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.hf-cover-stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+/* Shrink-to-fit width so legacy margin-% tricks are not tied to full matte width */
+.hf-cover-frame {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  transform-origin: top center;
+  /* % of this box's height = overlap onto gray matte (not margin-% of 660px wide CB) */
+  transform: translateY(-40%);
+}
+
+/* .artCover — layout size stays small so .hf-gray-matte height/width unchanged; scale(2) draws larger art */
+.art-cover {
+  border-radius: 10px;
+  border: none;
+  display: block;
+  width: auto;
+  max-width: min(calc(170px * var(--hf-matte-v-scale)), 100%);
+  height: auto;
+  margin-inline: auto;
+  background: #cccccc;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(2);
+  transform-origin: top center;
+}
+
+/* .hyperShadow */
+.hyper-shadow {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+}
+
+.hf-album-title {
+  margin: calc(29px * var(--hf-matte-v-scale)) 0 0;
+  font-size: 25pt;
+  line-height: 1.25em;
+  font-weight: 900;
+}
+
+.hf-artist {
+  margin: calc(24px * var(--hf-matte-v-scale)) 0 0;
+  font-size: 14pt;
+  font-weight: 400;
+  text-align: center;
+  color: var(--hf-text);
+}
+
+.hf-date-outer {
+  margin-top: calc(10px * var(--hf-matte-v-scale));
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+/* .hyperReleaseDateContainer */
+.hyper-release-date {
+  margin-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 0.5rem;
+  font-size: 12px;
+}
+
+.hf-available-text {
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.hf-release-icon {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.hf-presave-link {
+  text-transform: none;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-left: 0.1rem;
+}
+
+.hf-presave-link:hover {
+  color: #ffffff;
+}
+
+/* .theWholeThing */
+.the-whole-thing {
+  margin-top: 10px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px 0;
+  box-sizing: border-box;
+}
+
+/* Frosted panel (player only; large Spotify row removed) */
+.hf-glass-panel {
+  display: block;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: left;
+  border-radius: 10px;
+  margin: 10px 0;
+  background: var(--hf-glass);
+  color: var(--hf-text);
+  overflow: hidden;
+}
+
+.player-card {
+  cursor: default;
+}
+
+.player-card-pad {
+  padding: 16px 18px 14px;
+}
+
+.player-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tiny {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.song {
+  margin: 0.15rem 0 0.1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.artist {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.875rem;
+}
+
+.transport {
+  flex-shrink: 0;
+}
+
+.player-play {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  background: var(--spotify-green);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.player-play:hover {
+  background: var(--spotify-green-hover);
+  transform: scale(1.04);
+}
+
+.player-play-icon {
+  font-size: 1rem;
+  line-height: 1;
+  margin-left: 2px;
+}
+
+.progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0.85rem 0 0.4rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.8rem;
+}
+
+/* Compact label preview gate — single row inside player, minimal layout shift */
+.label-gate {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin: 0.35rem 0 0.55rem;
+  padding: 0.35rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.label-gate-hint {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.label-gate-input {
+  flex: 1 1 72px;
+  min-width: 0;
+  max-width: 140px;
+  height: 26px;
+  padding: 0 0.45rem;
+  font: inherit;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--hf-text);
+}
+
+.label-gate-btn {
+  flex-shrink: 0;
+  height: 26px;
+  padding: 0 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--hf-text);
+}
+
+.label-gate-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.label-gate-status {
+  margin: 0.25rem 0 0.45rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(29, 185, 84, 0.95);
+}
+
+.label-gate-error {
+  margin: 0.15rem 0 0.35rem;
+  font-size: 0.68rem;
+  color: #ff8a8a;
+}
+
+.time-label {
+  min-width: 2.35rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 99px;
+  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: 99px;
+  background: var(--spotify-green);
+  pointer-events: none;
+}
+
+.tracklist {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.tracklist > li {
+  padding-left: 0.15rem;
+}
+
+.track-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+
+.track-row--playable {
+  cursor: pointer;
+  border-color: rgba(29, 185, 84, 0.45);
+  background: rgba(29, 185, 84, 0.12);
+}
+
+.track-row--playable:hover:not(:disabled) {
+  background: rgba(29, 185, 84, 0.2);
+}
+
+.track-row:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.track-row--static {
+  cursor: default;
+  opacity: 0.72;
+}
+
+.track-row--active {
+  border-color: var(--spotify-green);
+  background: rgba(29, 185, 84, 0.22);
+}
+
+.track-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.track-badge,
+.track-row-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.55);
+  flex-shrink: 0;
+}
+
+.track-row-badge--action {
+  color: var(--spotify-green);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+.track-hint {
+  font-size: 0.72rem;
+  color: var(--spotify-green);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.hf-footnote {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 10pt;
+  line-height: 1.5em;
+  opacity: 0.7;
+  padding: 0 20px;
+}
+
+.hf-footnote-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hf-footnote-link:hover {
+  text-decoration: underline;
+}
+
+.hf-presave-link:focus-visible,
+.label-gate-input:focus-visible,
+.label-gate-btn:focus-visible,
+.player-play:focus-visible,
+.progress-bar:focus-visible,
+.track-row:focus-visible:not(:disabled),
+.hf-footnote-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+@media screen and (max-width: 480px) {
+  .hf-gray-matte {
+    background: transparent;
+    width: 100%;
+    margin-top: calc(40px * var(--hf-matte-v-scale));
+    padding: calc(40px * var(--hf-matte-v-scale)) 20px 0;
+  }
+
+  .hf-shell {
+    margin-top: 8vh;
+  }
+
+  .hf-cover-frame {
+    transform: translateY(-35%);
+  }
+
+  .art-cover {
+    max-width: min(calc(200px * var(--hf-matte-v-scale)), 100%);
+  }
+
+  .hyper-release-date {
+    margin-top: calc(5px * var(--hf-matte-v-scale));
+    justify-content: center;
+  }
+
+  .the-whole-thing {
+    margin-top: 10px;
+  }
+}
