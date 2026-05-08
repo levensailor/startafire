@@ -118,6 +118,17 @@ body {
   z-index: 8;
 }
 
+/* Enlarged IMG_5541 overlaps the player; lift player so the play control stays on top. */
+html.hf-show-back-cover-photo .the-whole-thing {
+  position: relative;
+  z-index: 15;
+}
+
+html.hf-show-back-cover-photo .player-top .transport {
+  position: relative;
+  z-index: 2;
+}
+
 .hf-cover-flip {
   perspective: 1000px;
   -webkit-perspective: 1000px;

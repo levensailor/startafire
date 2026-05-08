@@ -1,6 +1,9 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+
+/** Synced with `globals.css` — when set on `<html>`, player stacks above enlarged back photo. */
+const ROOT_CLASS_BACK_PHOTO_VISIBLE = "hf-show-back-cover-photo";
 
 export type AlbumCoverFlipProps = {
   coverSrc: string;
@@ -20,6 +23,18 @@ export function AlbumCoverFlip({
   const toggle = useCallback(() => {
     setFlipped((value) => !value);
   }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (flipped) {
+      root.classList.add(ROOT_CLASS_BACK_PHOTO_VISIBLE);
+    } else {
+      root.classList.remove(ROOT_CLASS_BACK_PHOTO_VISIBLE);
+    }
+    return () => {
+      root.classList.remove(ROOT_CLASS_BACK_PHOTO_VISIBLE);
+    };
+  }, [flipped]);
 
   return (
     <button
