@@ -69,6 +69,26 @@ export default function HomePage() {
                   <p className="song">Start a Fire</p>
                   <p className="artist">CROATOA</p>
                 </div>
+                <div className="label-gate" id="label-gate">
+                  <span className="label-gate-hint" id="label-gate-hint">
+                    Label preview
+                  </span>
+                  <input
+                    type="password"
+                    id="label-password"
+                    className="label-gate-input"
+                    autoComplete="current-password"
+                    placeholder="Password"
+                    aria-label="Label preview password"
+                  />
+                  <button
+                    type="button"
+                    className="label-gate-btn"
+                    id="label-unlock-btn"
+                  >
+                    Unlock
+                  </button>
+                </div>
                 <div className="transport">
                   <button
                     type="button"
@@ -108,26 +128,6 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <div className="label-gate" id="label-gate">
-                <span className="label-gate-hint" id="label-gate-hint">
-                  Label preview
-                </span>
-                <input
-                  type="password"
-                  id="label-password"
-                  className="label-gate-input"
-                  autoComplete="current-password"
-                  placeholder="Password"
-                  aria-label="Label preview password"
-                />
-                <button
-                  type="button"
-                  className="label-gate-btn"
-                  id="label-unlock-btn"
-                >
-                  Unlock
-                </button>
-              </div>
               <p className="label-gate-status" id="label-gate-status" hidden>
                 All tracks unlocked
               </p>
@@ -227,17 +227,6 @@ export default function HomePage() {
             </div>
           </section>
         </div>
-
-        <p className="hf-footnote dk-ad">
-          <a
-            className="hf-footnote-link"
-            href="https://distrokid.com/?ref=presave"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            This is a user-generated page powered by HyperFollow.
-          </a>
-        </p>
       </main>
       <Script src="/player.js" strategy="afterInteractive" />
     </>
