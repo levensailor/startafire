@@ -24,7 +24,7 @@ export function AlbumCoverFlip({
   return (
     <button
       type="button"
-      className="hf-cover-flip"
+      className={`hf-cover-flip${flipped ? " is-showing-back-photo" : ""}`}
       onClick={toggle}
       aria-pressed={flipped}
       aria-label={flipped ? showCoverLabel : showPhotoLabel}

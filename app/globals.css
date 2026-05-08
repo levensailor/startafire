@@ -4,6 +4,9 @@
 
 :root {
   color-scheme: dark;
+  /* Hero cover: base layout ×2; flipped alternate photo ×6 (= 3× the cover’s on-screen size). */
+  --hf-cover-art-scale: 2;
+  --hf-cover-back-art-scale: 6;
   /* Vertical compactness of the grey HyperFollow card (~66% of prior padding/margins) */
   --hf-matte-v-scale: 0.66;
   --hf-matte: #333333;
@@ -111,6 +114,10 @@ body {
   transform: translateY(-40%);
 }
 
+.hf-cover-frame:has(.hf-cover-flip.is-showing-back-photo) {
+  z-index: 8;
+}
+
 .hf-cover-flip {
   perspective: 1000px;
   -webkit-perspective: 1000px;
@@ -171,11 +178,11 @@ body {
 }
 
 .hf-cover-face--front .art-cover {
-  transform: translateZ(1px) scale(2);
+  transform: translateZ(1px) scale(var(--hf-cover-art-scale));
 }
 
 .hf-cover-face--back .art-cover {
-  transform: translateZ(1px) scale(2);
+  transform: translateZ(1px) scale(var(--hf-cover-back-art-scale));
 }
 
 /* .artCover — layout size stays small so .hf-gray-matte height/width unchanged; scale(2) draws larger art */
@@ -190,7 +197,7 @@ body {
   background: #cccccc;
   object-fit: contain;
   object-position: center;
-  transform: scale(2);
+  transform: scale(var(--hf-cover-art-scale));
   transform-origin: top center;
 }
 
