@@ -111,6 +111,73 @@ body {
   transform: translateY(-40%);
 }
 
+.hf-cover-flip {
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-inline: auto;
+  cursor: pointer;
+  display: block;
+  line-height: 0;
+  font: inherit;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hf-cover-flip:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.hf-cover-flip-track {
+  display: inline-block;
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 250ms ease;
+  transform: rotateY(0deg);
+}
+
+.hf-cover-flip-track.is-flipped {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hf-cover-flip-track {
+    transition-duration: 0.01ms;
+  }
+}
+
+.hf-cover-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.hf-cover-face--front {
+  display: block;
+}
+
+.hf-cover-face--back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+.hf-cover-face--front .art-cover {
+  transform: translateZ(1px) scale(2);
+}
+
+.hf-cover-face--back .art-cover {
+  transform: translateZ(1px) scale(2);
+}
+
 /* .artCover — layout size stays small so .hf-gray-matte height/width unchanged; scale(2) draws larger art */
 .art-cover {
   border-radius: 10px;

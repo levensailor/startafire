@@ -1,6 +1,8 @@
 import Script from "next/script";
+import { AlbumCoverFlip } from "./album-cover-flip";
 
 const COVER_PATH = "/start%20a%20fire%20cover.png";
+const BACK_FLIP_IMAGE_PATH = "/IMG_5541.png";
 
 export default function HomePage() {
   return (
@@ -22,12 +24,11 @@ export default function HomePage() {
           <div className="hf-gray-matte">
             <div className="hf-cover-stack">
               <div className="hf-cover-frame">
-                <img
-                  className="art-cover hyper-shadow"
-                  src={COVER_PATH}
-                  alt="Start a Fire album cover by CROATOA"
-                  width={800}
-                  height={800}
+                <AlbumCoverFlip
+                  coverSrc={COVER_PATH}
+                  backSrc={BACK_FLIP_IMAGE_PATH}
+                  showPhotoLabel="Flip to full-size photo"
+                  showCoverLabel="Flip back to album cover"
                 />
               </div>
             </div>
@@ -86,7 +87,7 @@ export default function HomePage() {
                     className="label-gate-btn"
                     id="label-unlock-btn"
                   >
-                    Unlock
+                    Unlock all tracks
                   </button>
                 </div>
                 <div className="transport">
