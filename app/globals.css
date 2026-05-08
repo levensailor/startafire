@@ -129,6 +129,17 @@ html.hf-show-back-cover-photo .player-top .transport {
   z-index: 2;
 }
 
+/* Band photo visible: drop label preview row so the player stays clean */
+html.hf-show-back-cover-photo .player-top {
+  grid-template-columns: 1fr auto;
+}
+
+html.hf-show-back-cover-photo .label-gate,
+html.hf-show-back-cover-photo .label-gate-status,
+html.hf-show-back-cover-photo .label-gate-error {
+  display: none;
+}
+
 .hf-cover-flip {
   perspective: 1000px;
   -webkit-perspective: 1000px;
@@ -402,7 +413,6 @@ html.hf-show-back-cover-photo .player-top .transport {
 
 .label-gate-input {
   flex: 1 1 56px;
-  min-width: 48px;
   max-width: 100px;
   height: 26px;
   padding: 0 0.45rem;
@@ -613,6 +623,10 @@ html.hf-show-back-cover-photo .player-top .transport {
     grid-template-columns: 1fr;
     justify-items: stretch;
     gap: 0.65rem;
+  }
+
+  html.hf-show-back-cover-photo .player-top {
+    grid-template-columns: 1fr;
   }
 
   .now-playing {

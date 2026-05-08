@@ -2,6 +2,10 @@
 
 Feature-level changes (not exhaustive bugfix notes).
 
+## 2026-05-08
+
+- **Player:** while the hero flip shows `croatoa-bill-notext.jpg`, hide the label preview / unlock row and use a two-column player top (now-playing + play).
+
 ## 2026-05-07
 
 - **Album cover flip:** 250ms 3D flip to `croatoa-bill-notext.jpg` at 3× cover size; while the photo is visible, the player stacks above it so the play button stays on top and clickable.
