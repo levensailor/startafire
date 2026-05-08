@@ -6,8 +6,10 @@
 
 ## Learned Workspace Facts
 
-- This repo is a static CROATOA album presave and preview experience built from `index.html`, `styles.css`, and `player.js` in the project root.
+- This repo is a **Next.js** (App Router) CROATOA presave and preview site: `app/page.tsx`, `app/globals.css`, and **`public/player.js`** with cover art and audio under **`public/`** (legacy root `index.html` / `styles.css` are not the source of truth).
 - Album presentation centers on `start a fire cover.png` with copy for the release “Start a Fire” and artist name CROATOA; the public release date shown on the page is June 1, 2026.
+- The hero cover is a clickable **3D flip** (about **250ms**) between the front cover and the back image **`croatoa-bill-notext.jpg`** from **`public/`**; the back face is shown at a larger on-screen scale than the front, and the same animation applies when flipping back.
+- While the back-of-cover photo is visible, the **player** block is stacked higher (via an `html` class) so the **play control** stays **above** the enlarged image and remains clickable.
 - The only bundled audio preview is `Clapback.mp3`, wired to the “Clap Back” row; the rest of the tracklist is display-only with coming-soon treatment.
 - Pre-save calls to action use the DistroKid HyperFollow URL for this release, including the `ref=release` query variant where a campaign link is needed.
 - The current page design omits bio text and band photo galleries; emphasis is cover art, availability line, pre-save, and the player plus tracklist styled after HyperFollow.
