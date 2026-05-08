@@ -4,6 +4,7 @@ Feature-level changes (not exhaustive bugfix notes).
 
 ## 2026-05-08
 
+- **Favicon:** dynamic app icon (`app/icon.tsx`) renders a fire emoji on a black tile for browser tabs.
 - **Player:** while the hero flip shows `croatoa-bill-notext.jpg`, hide the label preview / unlock row and use a two-column player top (now-playing + play).
 
 ## 2026-05-07
