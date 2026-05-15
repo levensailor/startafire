@@ -4,7 +4,14 @@
 
 HyperFollow-style presave and preview landing page for the album **Start a Fire**, built with **Next.js** (App Router). Audio files and artwork live in `public/`; UI logic for the player and label preview gate is in `public/player.js`.
 
-## Deployment (Vercel)
+## CROATOA band site (croatoa.live)
+
+A separate **official band website** (streaming, Spotify embed, Bandsintown, bio, booking, SEO) lives in **`sites/croatoa-live`**. It does not use the repo-root `app/` or `public/` folders so the presave build stays isolated.
+
+- **Deploy:** [sites/croatoa-live/DEPLOYMENT.md](sites/croatoa-live/DEPLOYMENT.md) — Vercel **Root Directory** `sites/croatoa-live`, framework **Next.js**.
+- **URL:** [https://croatoa.live](https://croatoa.live) (after the domain is attached to that Vercel project).
+
+## Deployment (Vercel) — presave app (repo root)
 
 1. Push this repo to GitHub (see branch workflow in [CONTRIBUTING.md](CONTRIBUTING.md)).
 2. In the [Vercel Dashboard](https://vercel.com), **Import** the repository.
@@ -22,6 +29,14 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+### Band site only (`sites/croatoa-live`)
+
+```bash
+cd sites/croatoa-live
+npm install
+npm run dev
+```
 
 ```bash
 npm run build && npm start

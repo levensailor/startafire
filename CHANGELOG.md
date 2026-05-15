@@ -2,6 +2,10 @@
 
 Feature-level changes (not exhaustive bugfix notes).
 
+## 2026-05-15
+
+- **CROATOA.LIVE site:** add standalone Next.js app in `sites/croatoa-live` (retro TV / brutalist UI, full palette, Spotify embed, Bandsintown widget, fan-list instructions, bio/tracklist, booking, SEO metadata, sitemap/robots, icons, deployment doc for Vercel root directory and Search Console).
+
 ## 2026-05-08
 
 - **Favicon:** dynamic app icon (`app/icon.tsx`) renders a fire emoji on a black tile for browser tabs.
