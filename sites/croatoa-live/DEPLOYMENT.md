@@ -14,6 +14,19 @@ This document covers deploying the standalone site in [`sites/croatoa-live`](./)
 7. **Install Command:** `npm install` (default).
 8. Deploy once on a Vercel preview URL and verify the homepage, Spotify embed, and Bandsintown block.
 
+### Fix: “No Next.js version detected”
+
+Vercel only reads `package.json` in the **Root Directory** you set for the project. If Root Directory is empty or `.`, Vercel uses the repo root (the presave app) or may not find the band site’s `package.json`.
+
+1. **Project → Settings → General → Root Directory** → **Edit**.
+2. Enter exactly: `sites/croatoa-live` (no leading `/`, no trailing slash).
+3. Confirm Vercel shows **Framework: Next.js** after saving (this folder’s [`package.json`](./package.json) includes `"next"` in `dependencies` and [`vercel.json`](./vercel.json) sets `"framework": "nextjs"`).
+4. **Redeploy** (Deployments → … → Redeploy).
+
+If you already attached `croatoa.live` to a project that was created with Root Directory `.`, change Root Directory as above, then redeploy — do not create a second project for the same domain.
+
+**Import screen:** When importing the repo, click **Edit** next to Root Directory and select or type `sites/croatoa-live` *before* the first deploy.
+
 ### Environment variables (optional)
 
 | Variable | Purpose |
