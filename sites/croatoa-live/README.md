@@ -6,3 +6,4 @@ Official **CROATOA** marketing site: hero art, streaming links, **Spotify embed*
 - **Deploy / domain / Google / Bandsintown:** [DEPLOYMENT.md](./DEPLOYMENT.md)
 
 Parent repo also contains the **Start a Fire** presave app at the repository root (`app/`, `public/`); this folder is intentionally separate.
+# croatoa-live
