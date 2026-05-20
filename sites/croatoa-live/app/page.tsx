@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { BandsintownEvents } from "@/components/BandsintownEvents";
+import { BandsintownShowsSection } from "@/components/BandsintownShowsSection";
+import { ShowsHeroLink, ShowsNavLink } from "@/components/ShowsNavLink";
 import { FanEmailSignup } from "@/components/FanEmailSignup";
 import { StreamingLogos } from "@/components/StreamingLogos";
 import { getBioParagraphs } from "@/lib/content";
@@ -29,7 +30,7 @@ export default function HomePage() {
         <nav className="nav-chips" aria-label="Page sections">
           <a href="#listen">Listen</a>
           <a href="#player">Play</a>
-          <a href="#shows">Shows</a>
+          <ShowsNavLink />
           <a href="#fan-list">Join</a>
           <a href="#bio">Bio</a>
           <a href="#book">Book</a>
@@ -63,9 +64,7 @@ export default function HomePage() {
                 <a className="btn btn-primary" href="#player">
                   ▶ Drop needle
                 </a>
-                <a className="btn btn-secondary" href="#shows">
-                  Live feed
-                </a>
+                <ShowsHeroLink className="btn btn-secondary">Live feed</ShowsHeroLink>
                 <a className="btn btn-comp" href={spotifyArtistUrl} target="_blank" rel="noreferrer">
                   Spotify app
                 </a>
@@ -102,10 +101,7 @@ export default function HomePage() {
           </p>
         </section>
 
-        <section className="panel" id="shows" aria-labelledby="shows-heading">
-          <h2 id="shows-heading">Upcoming — Bandsintown</h2>
-          <BandsintownEvents />
-        </section>
+        <BandsintownShowsSection />
 
         <section className="panel" id="bio" aria-labelledby="bio-heading">
           <h2 id="bio-heading">Bio</h2>
