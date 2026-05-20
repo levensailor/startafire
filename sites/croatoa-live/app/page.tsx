@@ -2,7 +2,12 @@ import Image from "next/image";
 import { BandsintownShowsSection } from "@/components/BandsintownShowsSection";
 import { ShowsHeroLink, ShowsNavLink } from "@/components/ShowsNavLink";
 import { FanEmailSignup } from "@/components/FanEmailSignup";
+import { DropNeedleButton } from "@/components/DropNeedleButton";
 import { StreamingLogos } from "@/components/StreamingLogos";
+import {
+  SpotifyEmbedHost,
+  SpotifyPlayerProvider,
+} from "@/components/SpotifyPlayerProvider";
 import { getBioParagraphs } from "@/lib/content";
 import {
   artistDisplayName,
@@ -11,7 +16,6 @@ import {
   cityRegion,
   heroImageFilename,
   spotifyArtistUrl,
-  spotifyEmbedSrc,
 } from "@/lib/site-config";
 
 export default function HomePage() {
@@ -37,6 +41,7 @@ export default function HomePage() {
         </nav>
       </header>
 
+      <SpotifyPlayerProvider>
       <main id="main">
         <section className="hero" aria-labelledby="hero-heading">
           <div className="tv-frame">
@@ -61,9 +66,7 @@ export default function HomePage() {
               <p className="lede">{artistTagline}</p>
               <FanEmailSignup />
               <div className="hero-actions">
-                <a className="btn btn-primary" href="#player">
-                  ▶ Drop needle
-                </a>
+                <DropNeedleButton />
                 <ShowsHeroLink className="btn btn-secondary">Live feed</ShowsHeroLink>
                 <a className="btn btn-comp" href={spotifyArtistUrl} target="_blank" rel="noreferrer">
                   Spotify app
@@ -80,15 +83,7 @@ export default function HomePage() {
           aria-labelledby="player-heading"
         >
           <h2 id="player-heading">Now playing — Spotify embed</h2>
-          <div className="player-wrap">
-            <iframe
-              title={`Spotify player — ${artistDisplayName}`}
-              src={spotifyEmbedSrc}
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </div>
+          <SpotifyEmbedHost />
           <p className="player-note">
             Playback runs on Spotify&apos;s embed player — streams count toward
             Spotify when listeners are signed in and playback meets
@@ -129,6 +124,7 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+      </SpotifyPlayerProvider>
 
       <footer className="site-footer">
         <p>

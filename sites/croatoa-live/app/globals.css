@@ -330,6 +330,11 @@ body::after {
     box-shadow 0.1s ease;
 }
 
+button.btn {
+  appearance: none;
+  background: none;
+}
+
 .btn:active {
   transform: translate(2px, 2px);
 }
@@ -467,7 +472,11 @@ section.panel h2 {
   border-radius: 2px;
 }
 
-.player-wrap iframe {
+.spotify-embed-host {
+  width: 100%;
+}
+
+.spotify-embed-host iframe {
   width: 100%;
   min-height: 380px;
   border: 0;
