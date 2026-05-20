@@ -55,12 +55,9 @@ export const bandsintownEmailSignupIframeSrc =
 /** Matches `.btn` font-size (0.72rem) — scales iframe content to align with Drop needle. */
 export const bandsintownEmailSignupDisplayScale = 0.72;
 
-/** Visible height of the hero actions row after scaling (px). */
-export const bandsintownEmailSignupRowHeightPx = 132;
-
-/** Unscaled iframe height; must fit email field + fanboy CTA before scale (see `.hero-actions__fan-scale`). */
+/** Unscaled iframe height; CSS scale fits the hero row (see `.hero-actions__fan-scale`). */
 export const bandsintownEmailSignupIframeHeightPx = Math.ceil(
-  bandsintownEmailSignupRowHeightPx / bandsintownEmailSignupDisplayScale
+  80 / bandsintownEmailSignupDisplayScale
 );
 
 export const heroImageFilename = "croatoa-bill-notext.jpg";
