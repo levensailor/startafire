@@ -3,7 +3,6 @@
    - https://distrokid.com/css/main.css (.pageBg, .pageBgImage) */
 
 :root {
-  color-scheme: dark;
   /* Hero cover: base layout ×2; flipped alternate photo ×6 (= 3× the cover’s on-screen size). */
   --hf-cover-art-scale: 2;
   --hf-cover-back-art-scale: 6;
